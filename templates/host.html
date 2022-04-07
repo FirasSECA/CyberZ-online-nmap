@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://127.0.0.1:5000/">CyberZ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="http://127.0.0.1:5000/port-scan">Port Scan</a>
+          <a class="nav-link" aria-current="page" href="http://127.0.0.1:5000/os-informations">Os Informations</a>
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/host-detection">Host Detection</a>
+          <a class="nav-link" aria-current="page" href="http://127.0.0.1:5000/firewall-detail">Firewalls Details</a>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<br><br><br>
+
+<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center">
+<form method="POST" class="form-floating">
+    <div class="justify-content-md-center mx-auto">
+      <label for="domain" class="d-flex justify-content-center">Domain</label>
+      <input
+        type="text"
+        class="form-control justify-content-md-center"
+        id="domain"
+        name="domain"
+        placeholder="Enter domain"
+      />
+      <button type="submit" class="btn btn-dark text-center justify-content-center">Submit</button>
+
+    </div> 
+    
+
+  </form>
+</div>
+</div>
+
+
+  <br><br>
+  <h3 class="text-center">List of hosts</h3>
+  <br>
+  <div class="container">
+  <table class="table table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">#</th>
+        <th class="text-center" scope="col">Host IP adress</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {%for i in zipped%}
+      <tr> 
+        <th class="text-center" scope="row">{{i[1]}}</th>
+        <td class="text-center">{{i[0]}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  
+  </table>
+</div>
+
+{% endblock %}
