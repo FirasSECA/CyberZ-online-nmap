@@ -1,12 +1,12 @@
-from asyncio.windows_events import NULL
-from flask import Flask, render_template, url_for, request, Response, json
+from flask import Flask, render_template, request, json
 
 app = Flask(__name__)
 import hostdetection
 import checkport
 import osdetect
 
-import graph
+#import graph
+
 
 @app.route('/')
 def index():
@@ -59,9 +59,7 @@ def host():
 def firewallDetails():
     return render_template("firewall.html")
 
-@app.route('/graph')
-def dynamic_page():
-    return graph
+
 
 if __name__ == "__main__":
     app.run(debug=True)

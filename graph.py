@@ -2,6 +2,7 @@ from dash import Dash, html
 import dash_cytoscape as cyto
 
 app = Dash(__name__)
+
 simple_elements = [
     {
         'data': {'id': 'lm1', 'label': 'lan_machin1 ', 'url': 'https://cdn-icons-png.flaticon.com/512/4703/4703650.png'},
