@@ -5,8 +5,6 @@ import hostdetection
 import checkport
 import osdetect
 
-#import graph
-
 
 @app.route('/')
 def index():
@@ -58,7 +56,6 @@ def host():
 @app.route('/firewall-detail')
 def firewallDetails():
     return render_template("firewall.html")
-
 
 
 if __name__ == "__main__":
